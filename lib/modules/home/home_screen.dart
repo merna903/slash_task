@@ -20,18 +20,22 @@ class HomeScreen extends StatelessWidget {
               child: const Text('Slash.',style: TextStyle(
                 fontWeight: FontWeight.w800,
                 fontSize: 45,
+                color: Colors.white
               ),),
             ) ,
             backgroundColor: Colors.black,
           ),
           body: Container(
-            width: double.infinity,
             decoration: const BoxDecoration(
               color: Colors.black,
             ),
             child: ConditionalBuilder(
               condition: AppCubit.get(context).homeModel != null,
-              fallback: (BuildContext context) => const Center(child: Text('./')),
+              fallback: (BuildContext context) => const Center(child: Text('./',style: TextStyle(
+                color: Colors.white,
+                fontSize: 80,
+                fontWeight: FontWeight.w900,
+              ),)),
               builder: (BuildContext context) => ListView.separated(
               itemBuilder: (BuildContext context, int index) => homeBuilder(AppCubit.get(context).homeModel!,context),
               separatorBuilder: (BuildContext context, int index) => const Divider(),
@@ -52,38 +56,35 @@ class HomeScreen extends StatelessWidget {
   
   Widget homeBuilder(Home model, context) => SingleChildScrollView(
     physics: const BouncingScrollPhysics(),
-    child: Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-              Container(
-                color: Colors.black,
-                child: GridView.count(
-                  shrinkWrap: true,
-                  physics: const NeverScrollableScrollPhysics() ,
+    child: Container(
+              color: Colors.black,
+              child: GridView.builder(
+                shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics() ,
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
-                  mainAxisSpacing: 1.0,
-                  crossAxisSpacing: 1.0,
-                  childAspectRatio: 1/1.6,
-                  children:
-                  List.generate(
-                      model.data!.length,
-                      (index) => buildGridProduct(model.data![index], context)
-                  ),
+                mainAxisSpacing: 20,
+                crossAxisSpacing: 20,
+                childAspectRatio: 0.7,
                 ),
+                itemBuilder: (BuildContext context, int index) => buildGridProduct(model.data![index], context),
+                itemCount: model.data?.length,
               ),
-            ],
-          ),
+            ),
         );
 
 
-Widget buildGridProduct(Products model, context) => Container(
-  clipBehavior: Clip.hardEdge,
-  child: Column(
-    crossAxisAlignment: CrossAxisAlignment.start,
+Widget buildGridProduct(Products model, context) => Column(
+    crossAxisAlignment: CrossAxisAlignment.center,
     children: [
-      Image(
+      ClipRRect(
+        borderRadius: BorderRadius.circular(25),
+        child: Image(
+        height: 150,
+        width: 150,
         image: NetworkImage(model.productVariations![0].productVarientImages![0].imagePath??''),
-        fit: BoxFit.cover,
+        fit: BoxFit.fill,
+      ),
       ),
       Padding(
         padding: const EdgeInsets.all(12.0),
@@ -91,47 +92,45 @@ Widget buildGridProduct(Products model, context) => Container(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text(
+                Expanded(child: Text(
                   "${model.brands!.brandName} - ${model.name}",
                   maxLines: 2,
-                  overflow: TextOverflow.ellipsis,
                   style: const TextStyle(
-                    fontSize: 14,
+                    color: Colors.white,
+                    fontSize: 20,
                     height: 1.2,
                   ),
                 ),
-              ],
-            ),
-            Row(
-              children: [
-                Text(
-                  'EGP ${model.productVariations![0].price!.round()}',
-                  style: const TextStyle(
-                    fontSize: 12,
-                    fontWeight: FontWeight.w500
-                  ),
                 ),
-                const SizedBox(
-                  width: 5,
-                ),
-                const Spacer(),
-                CircleAvatar(
-                  radius: 15.0,
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(35),
                   child: Image(
+                    height: 35,
+                    width: 35,
                     image: NetworkImage(
-                      model.brands!.brandLogoImagePath??'',
+                      model.brands?.brandLogoImagePath??'',
                     ),
-                    fit: BoxFit.fill,
+                    fit: BoxFit.cover,
                   ),
                 ),
               ],
             ),
+            Align(
+              alignment: Alignment.bottomLeft,
+              child: Text(
+              'EGP ${model.productVariations![0].price!.round()}',
+              style: const TextStyle(
+                color: Colors.white,
+                fontSize: 20,
+                fontWeight: FontWeight.w500,
+              ),
+              textAlign: TextAlign.end,
+            ),
+           )
           ],
         ),
       ),
     ],
-  ),
 );
 }

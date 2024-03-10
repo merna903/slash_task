@@ -30,9 +30,6 @@ class Products {
       productVariations = <ProductVariations>[];
       json['ProductVariations'].forEach((v) {
         productVariations!.add(ProductVariations.fromJson(v));
-        if(!productVariations![v].isDefault){
-          productVariations!.removeLast();
-        }
       });
     }
   }
