@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:slash_task/cubits/app_cubit.dart';
 import 'package:slash_task/cubits/app_states.dart';
-import 'package:slash_task/modules/home/home_screen.dart';
 import 'package:slash_task/modules/splash/splash_view.dart';
 import 'package:slash_task/shared/blocObserver.dart';
 import 'package:slash_task/shared/network/remote/dio_helper.dart';
@@ -29,7 +28,7 @@ class MainApp extends StatelessWidget {
           return MaterialApp(
             theme: ThemeData(fontFamily: 'Noyh'),
             debugShowCheckedModeBanner: false,
-            home:const HomeScreen(),
+            home:const SplashScreen(),
           );
         },
         listener: (context, Object? state){},
