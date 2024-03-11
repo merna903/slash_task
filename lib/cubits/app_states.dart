@@ -26,4 +26,3 @@ class AppChangIsExpandedState extends AppStates {}
 
 class AppVariationChangeState extends AppStates {}
 
-class AppImageChangeState extends AppStates {}

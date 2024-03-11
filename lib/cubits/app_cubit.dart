@@ -50,13 +50,6 @@ class AppCubit extends Cubit<AppStates> {
     emit(AppChangIsExpandedState());
   }
 
-  String imagePath = "";
-
-  void changeImage(String image) {
-    imagePath = image;
-    emit(AppImageChangeState());
-  }
-
   int variationId = 0;
 
   void variationChanged(int id) {

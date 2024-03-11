@@ -6,10 +6,15 @@ import 'package:slash_task/shared/widgets/variation_widget.dart';
 
 import '../../cubits/app_cubit.dart';
 
+// ignore: must_be_immutable
 class ProductDetails extends StatelessWidget {
-  const ProductDetails({super.key, required this.model});
+  ProductDetails({super.key, required this.model});
 
   final ProductInfo model;
+  PageController pageController = PageController(
+    initialPage: 0,
+    keepPage: true,
+  );
 
   @override
   Widget build(BuildContext context) {
@@ -24,6 +29,7 @@ class ProductDetails extends StatelessWidget {
             SizedBox(
               height: 280,
               child: PageView(
+                controller: pageController,
                 physics: const BouncingScrollPhysics(),
                 scrollDirection: Axis.horizontal,
                 children: List.generate(
@@ -66,8 +72,7 @@ class ProductDetails extends StatelessWidget {
                     model.data!.variations!.indexWhere((item) => item.id == AppCubit.get(context).variationId)].productVarientImages!.length,
                   (index) => GestureDetector(
                     onTap: () {
-                      AppCubit.get(context).changeImage(model.data!.variations![model.data!.variations!.indexWhere((item) => item.id == AppCubit.get(context).variationId) == -1 ? 0
-                              : model.data!.variations!.indexWhere((item) => item.id == AppCubit.get(context).variationId)].productVarientImages![index].imagePath!);},
+                      pageController.animateToPage(index, duration: const Duration(milliseconds: 500), curve: Curves.ease);},
                     child: Container(
                       padding: const EdgeInsets.symmetric(horizontal: 5),
                       child: ClipRRect(
