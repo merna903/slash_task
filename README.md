@@ -5,23 +5,26 @@
  * Home screen
  * Product Details Screen
 
-## Splash
+## Splash Screen
 <p align="center">
-<img src="![Screenshot 2024-03-11 205113](https://github.com/merna903/slash_task/assets/83590570/f4b2cd3a-b456-454b-a073-e58ac922bf67)" height="270" width="140"  >
+<img src="https://github.com/merna903/slash_task/assets/83590570/f4b2cd3a-b456-454b-a073-e58ac922bf67" height="270" width="140"  >
 </p>
 
-## Register UI
+## Home Screen
 <p align="center">
-<img src="https://github.com/merna903/auth_using_firebase/assets/83590570/08d918d0-a0eb-46ea-9eb6-9c183f0357c6" height="270" width="140"  >
+<img src="https://github.com/merna903/slash_task/assets/83590570/f4832be8-37b3-4fe7-bbbf-081136a7255d" height="270" width="140"  >
 </p>
 
-## Google Sign In
+## Product Details Screen
+each product has its variations 
 <p align="center">
-<img src="https://github.com/merna903/auth_using_firebase/assets/83590570/83eabe5e-e2a7-4c1f-bdb8-dc44a0083f7d" height="270" width="140"  >
+<img src="https://github.com/merna903/slash_task/assets/83590570/3801010b-55bb-4260-8a2a-cee3d6a253a6" height="270" width="140"  >
+<img src="https://github.com/merna903/slash_task/assets/83590570/bbdc6758-3404-4880-a8d3-3862eeabcb5a" height="270" width="140"  >
+<img src="https://github.com/merna903/slash_task/assets/83590570/057aea10-a61f-4443-958b-22f83d143f74" height="270" width="140"  >
+</p>
+Description Field
+<p align="center">
+<img src="https://github.com/merna903/slash_task/assets/83590570/97185f0d-a550-4e88-93a7-1770a20e5152" height="270" width="140"  >
 </p>
 
-## Handling Errors
-<p align="center">
-<img src="https://github.com/merna903/auth_using_firebase/assets/83590570/108da596-1862-4566-8c12-23d7a7649a37" height="270" width="140"  >
-<img src="https://github.com/merna903/auth_using_firebase/assets/83590570/ee552546-32c6-40e0-8ad7-3785309d52ad" height="270" width="140"  >
-</p>
+
