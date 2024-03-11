@@ -1,13 +1,13 @@
 # Flutter App With 3 Screens
 
  a simple application with 3 different screens: 
- > Splash Screen
- > Home screen
- > Product Details Screen
+ * Splash Screen
+ * Home screen
+ * Product Details Screen
 
 ## Splash
 <p align="center">
-<img src="https://github.com/merna903/auth_using_firebase/assets/83590570/b6d9440a-e2b6-426c-b918-0843e6540454" height="270" width="140"  >
+<img src="![Screenshot 2024-03-11 205113](https://github.com/merna903/slash_task/assets/83590570/f4b2cd3a-b456-454b-a073-e58ac922bf67)" height="270" width="140"  >
 </p>
 
 ## Register UI
