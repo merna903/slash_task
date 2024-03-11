@@ -24,8 +24,7 @@ class Products {
   Products.fromJson(Map<String, dynamic> json) {
     id = json['id'];
     name = json['name'];
-    brands =
-        json['Brands'] != null ? Brands.fromJson(json['Brands']) : null;
+    brands = json['Brands'] != null ? Brands.fromJson(json['Brands']) : null;
     if (json['ProductVariations'] != null) {
       productVariations = <ProductVariations>[];
       json['ProductVariations'].forEach((v) {
@@ -34,7 +33,6 @@ class Products {
     }
   }
 }
-
 
 class Brands {
   int? id;
@@ -69,7 +67,6 @@ class ProductVariations {
   }
 }
 
-
 class ProductVarientImages {
   int? id;
   String? imagePath;
@@ -81,4 +78,3 @@ class ProductVarientImages {
     productVarientId = json['product_varient_id'];
   }
 }
-

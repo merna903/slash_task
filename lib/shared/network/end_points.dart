@@ -1,4 +1,3 @@
-import 'package:slash_task/shared/components/constans.dart';
+import 'package:slash_task/shared/constants.dart';
 
 String home = 'product?limit=20&page=$pageNum';
-String product = "product/$id";

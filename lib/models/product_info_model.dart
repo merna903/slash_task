@@ -52,8 +52,6 @@ class Count {
   }
 }
 
-
-
 class Variations {
   int? id;
   int? price;
@@ -113,6 +111,11 @@ class AvaiableProperties {
       values = <Values>[];
       json['values'].forEach((v) {
         values!.add(Values.fromJson(v));
+        if (values!.length > 1) {
+          if (values!.last.value == values![values!.length - 2].value) {
+            values!.removeLast();
+          }
+        }
       });
     }
   }
